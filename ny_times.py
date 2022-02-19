@@ -13,5 +13,5 @@ for i in range(len(images)):
     images[i].save("page.jpg", "JPEG")
 
 with Image.open("page.jpg") as im:
-    im.rotate(90)
+    im.rotate(45)
     im.save("page.jpg")
