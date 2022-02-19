@@ -1,13 +1,17 @@
 from tkinter import Y
 import pandas as pd
 import numpy as np
-import seaborn as sns
 import matplotlib.pyplot as plt
 
+# make data
+x = np.linspace(0, 10, 100)
+y = 4 + 2 * np.sin(2 * x)
 
-d = {"x": range(100), "y": np.random.rand(100)}
-df = pd.DataFrame(data=d)
-print(df)
+# plot
+fig, ax = plt.subplots()
 
-sns.lineplot(data=df, x="x", y="y")
-plt.savefig("graph.png")
+ax.plot(x, y, linewidth=2.0)
+
+ax.set(xlim=(0, 8), xticks=np.arange(1, 8), ylim=(0, 8), yticks=np.arange(1, 8))
+
+plt.show()
