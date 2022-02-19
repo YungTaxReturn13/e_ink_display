@@ -10,7 +10,7 @@ images = convert_from_path("/home/pi/Pimoroni/inky/examples/7color/images/scan.p
 for i in range(len(images)):
 
     # Save pages as images in the pdf
-    images[i].save("page" + str(i) + ".jpg", "JPEG")
+    images[i].save("page.jpg", "JPEG")
 
 with Image.open("page.jpg") as im:
     im.rotate(90)
