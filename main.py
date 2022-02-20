@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
+import imp
 import signal
 import RPi.GPIO as GPIO
+from clear import clear
 
 print(
     """buttons.py - Detect which button has been pressed
@@ -31,6 +33,8 @@ GPIO.setup(BUTTONS, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 def handle_button(pin):
     label = LABELS[BUTTONS.index(pin)]
     print("Button press detected on pin: {} label: {}".format(pin, label))
+    if label == "A":
+        clear()
 
 
 # Loop through out buttons and attach the "handle_button" function to each
