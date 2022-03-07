@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <h3> As of: {{ time }}</h3>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        /* Create two equal columns that sits next to each other */
+        .column {
+            flex: 10%;
+            padding: 10px;
+            /* Should be removed. Only for demonstration */
+        }
+    </style>
+</head>
+
+<body>
+    {% block content %}{% endblock %}
+</body>

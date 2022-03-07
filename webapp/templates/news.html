@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<body>
+    <div>
+        <h3>{{news_data.title}}</h3>
+        <p>{{news_data.abstract}}</p>
+        <img src={{ news_data.multimedia.1.url }} alt="example" width={{news_data.multimedia.1.width}}
+            height={{news_data.multimedia.1.height}}>
+        <img src={{qr_images}} width=100 height=100>
+
+    </div>
+</body>
+{% endblock content %}

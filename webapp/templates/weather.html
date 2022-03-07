@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<body>
+
+    <div>
+        <div style="border: 1px solid lightgray; border-radius: 1px;">
+            <h3 style="text-align: center;">Current Weather</h3>
+            <div class="row">
+                <div class="column" style="border: lightgray; border-radius: 10px">
+                    <p><b>Sunrise: </b>{{current_weather.sunrise}}</p>
+                    <p><b>Tempurature: </b>{{current_weather.tempurature}}</p>
+                    <p><b>Feels Like: </b>{{current_weather.feels_like}}</p>
+                </div>
+                <div class="column" style="border: lightgray; border-radius: 5px">
+                    <p><b>Sunset: </b>{{current_weather.sunset}}</p>
+                    <p><b>Wind Speed: </b>{{current_weather.wind_speed}}</p>
+                    <p><b>Conditions: </b>{{current_weather.conditions}}</p>
+                </div>
+            </div>
+        </div>
+        <div style="border: 1px solid lightgray; border-radius: 10px;">
+            <div class="row">
+                <div class="column" style="border: 1px solid lightgray; border-radius: 10px">
+                    <h4>{{forecast_weather.1.date}}</h4>
+                    <b>{{forecast_weather.1.weather}}</b>
+                    <p><b>High: </b>{{forecast_weather.1.high}}</p>
+                    <p><b>Low: </b>{{forecast_weather.1.low}}</p>
+                </div>
+                <div class="column" style="border: 1px solid lightgray; border-radius: 10px">
+                    <h4>{{forecast_weather.2.date}}</h4>
+                    <b>{{forecast_weather.2.weather}}</b>
+                    <p><b>High: </b>{{forecast_weather.2.high}}</p>
+                    <p><b>Low: </b>{{forecast_weather.2.low}}</p>
+                </div>
+                <div class="column" style="border: 1px solid lightgray; border-radius: 10px">
+                    <h4>{{forecast_weather.3.date}}</h4>
+                    <b>{{forecast_weather.3.weather}}</b>
+                    <p><b>High: </b>{{forecast_weather.3.high}}</p>
+                    <p><b>Low: </b>{{forecast_weather.3.low}}</p>
+                </div>
+                <div class="column" style="border: 1px solid lightgray; border-radius: 10px">
+                    <h4>{{forecast_weather.4.date}}</h4>
+                    <b>{{forecast_weather.4.weather}}</b>
+                    <p><b>High: </b>{{forecast_weather.4.high}}</p>
+                    <p><b>Low: </b>{{forecast_weather.4.low}}</p>
+                </div>
+                <div class="column" style="border: 1px solid lightgray; border-radius: 10px">
+                    <h4>{{forecast_weather.5.date}}</h4>
+                    <b>{{forecast_weather.5.weather}}</b>
+                    <p><b>High: </b>{{forecast_weather.5.high}}</p>
+                    <p><b>Low: </b>{{forecast_weather.5.low}}</p>
+                </div>
+                <div class="column" style="border: 1px solid lightgray; border-radius: 10px">
+                    <h4>{{forecast_weather.6.date}}</h4>
+                    <b>{{forecast_weather.6.weather}}</b>
+                    <p><b>High: </b>{{forecast_weather.6.high}}</p>
+                    <p><b>Low: </b>{{forecast_weather.6.low}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+{% endblock content %}
