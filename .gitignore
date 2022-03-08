@@ -30,6 +30,7 @@ keys/
 ny_times.json
 weather.json
 *.ipynb
+static/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

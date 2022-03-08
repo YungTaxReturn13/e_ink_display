@@ -1,7 +1,4 @@
-from fileinput import filename
-from re import template
 from flask import Flask, render_template, url_for
-from graphviz import render
 import json
 from datetime import datetime
 from wind_speed import wind_speed_categories
@@ -10,15 +7,14 @@ import random
 import qrcode
 import os
 
-qr_folder = "information/qr_codes"
+
 app = Flask(__name__)
-app.config["qr_folder"] = qr_folder
 
 
-with open("information/ny_times.json") as json_file:
+with open("../information/ny_times.json") as json_file:
     news_data = json.load(json_file)
 
-with open("information/weather.json") as json_file:
+with open("../information/weather.json") as json_file:
     weather_data = json.load(json_file)
 
 # Getting the time everything was generated based on the weather data timestamp
@@ -50,7 +46,7 @@ for i in weather_data["daily"]:
         }
     )
 
-
+@app.route("/")
 @app.route("/news")
 def news():
     x = random.randint(0, len(news_data["results"]) - 1)
@@ -61,15 +57,15 @@ def news():
     qr.add_data(input_data)
     qr.make(fit=True)
     img = qr.make_image(fill="black", back_color="white")
-    img.save(f"webapp/static/qrcode{x}.png")
+    img.save(f"static/qrcode{x}.png")
     qr_images = url_for('static', filename=f'qrcode{x}.png' )
 
-    return render_template("news.html", time=my_datetime_est, news_data=story_data, qr_images = qr_images)
+    return render_template("news.html", time=my_datetime_est, news_data=story_data,qr_images = qr_images)
 
 
 @app.route("/weather")
 def weather():
-    dir = "webapp/static/"
+    dir = "static/"
     for f in os.listdir(dir):
         os.remove(os.path.join(dir, f))
     return render_template(

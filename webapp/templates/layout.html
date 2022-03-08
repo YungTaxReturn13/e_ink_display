@@ -2,25 +2,36 @@
 <html>
 
 <head>
-    <h3> As of: {{ time }}</h3>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-        .row {
-            display: flex;
-        }
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 2px;
+}
 
-        /* Create two equal columns that sits next to each other */
-        .column {
-            flex: 10%;
-            padding: 10px;
-            /* Should be removed. Only for demonstration */
-        }
-    </style>
+.left {
+  width: 85%;
+}
+
+.right {
+  width: 15%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
 </head>
 
 <body>
+    <p>As of: {{time}} </p>
     {% block content %}{% endblock %}
 </body>
